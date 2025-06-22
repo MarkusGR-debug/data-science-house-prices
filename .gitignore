@@ -1,0 +1,5 @@
+# Ignore temporary files
+*.tmp
+*.log
+*.DS_Store
+Thumbs.db
