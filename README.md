@@ -1,46 +1,59 @@
-# data-science-house-prices
-📊 Data Science on House Prices and Broadband in Oxfordshire
+# 🏠 House Prices & Broadband Coverage – Data Science Project
 
-This project explores datasets related to house prices, broadband speeds, and council tax charges across various areas in Oxfordshire. The goal was to clean, normalize, and analyze the data using R and SQL to uncover trends and insights that can support regional planning and decision-making.
-📁 Project Structure
-Folder/File	Description
-database.db3	The compiled and cleaned relational database.
-query1.R to query8.R	Example R scripts for SQL queries and data manipulation.
-Median price paid by ward.xlsx	Source data used to build the database.
-HPSSA Dataset 37.xlsx	External data on median house prices by property type.
-Recording of Code.mp4	A short demonstration showing how the R scripts work.
-Data Science on House Prices.docx	Final report summarizing methods, queries, and findings.
-💡 Key Highlights
+Welcome to a real-world data science project where I explored **house prices, council tax, and broadband coverage** across Oxfordshire using R, SQL, and Excel. The project focused on **data cleaning, normalization**, and **insight extraction** using queries and visualizations.
 
-    ✅ Built and normalized a relational database (1NF → 3NF).
+---
 
-    📈 Used SQL within R to query pricing trends by ward, month, and property type.
+## 📌 Overview
 
-    🗃️ Applied extensive data cleaning and filtering to real-world datasets.
+- 📊 **Multi-source data collection** (Excel files from gov.uk, Ofcom, ONS)
+- 🧼 **Data transformation and cleaning**
+- 🗃️ **Normalization to 1NF, 2NF, 3NF**
+- 🧠 **Query logic for meaningful insights**
+- 💻 Coded in **R** using **SQLite database** with custom schema
 
-    🧠 Gained insights such as:
+---
+## 💡 Example Queries (R + SQL)
 
-        Average house prices per quarter for selected years.
+```r
+# 📌 Average price by ward in 2022
+query <- "
+SELECT Ward, AVG(Price) AS AvgPrice
+FROM HousePrices
+WHERE Year = 2022
+GROUP BY Ward
+ORDER BY AvgPrice DESC;
+"
 
-        Broadband coverage by region and tax band comparisons.
+# 📌 Superfast broadband postcodes and house prices
+query <- "
+SELECT h.Postcode, h.Price, b.DownloadSpeed
+FROM HousePrices h
+JOIN Broadband b ON h.Postcode = b.Postcode
+WHERE b.Availability = 'Superfast';
+"
 
-        Identified high-growth areas using temporal price trends.
+🛠️ Tools & Technologies
+Language	Libraries	Database	Formats Used
+R	dplyr, DBI, readxl	SQLite	.xlsx, .db3
+SQL	SQLite dialect		
+Excel	Manual filtering, merge		.xlsx
+📖 What's Included
 
-🔍 Example Queries
+    ✅ Relational schema for normalized housing data
 
-Some of the R scripts demonstrate:
+    ✅ SQL & R queries answering specific domain questions
 
-    Average house price in a given ward per month.
+    ✅ Documentation: full report on process + findings
 
-    Comparison between detached and semi-detached houses over time.
+    ✅ Recording: showing queries running in RStudio
 
-    Broadband availability in areas with lower council tax bands.
+🧠 Learning Highlights
 
-    Seasonal trends in the Oxfordshire property market.
+    Working with real-world, messy government data
 
-Watch how the database is queried using R and how data insights are generated step-by-step.
-📄 Report
+    Building efficient, normalized relational datasets
 
-The full methodology, explanation of the normalization process, and discussion of insights can be found in the report:
+    Writing complex SQL queries for dynamic filtering
 
-    📑 Data Science on House Prices.docx
+    Automating analysis using R scripting
