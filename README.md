@@ -11,3 +11,10 @@ Welcome to a real-world data science project where I explored **house prices, co
 - 🗃️ **Normalization to 1NF, 2NF, 3NF**
 - 🧠 **Query logic for meaningful insights**
 - 💻 Coded in **R** using **SQLite database** with custom schema
+
+## 🧾 Reports
+
+Find the report in [`docs/`](Data Science on House Prices and Broadband.docx):
+
+**Author:** [Markus Radu] 
+📧 markusradu2002@gmail.com
