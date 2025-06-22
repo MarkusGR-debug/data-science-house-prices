@@ -12,5 +12,8 @@ Welcome to a real-world data science project where I explored **house prices, co
 - 🧠 **Query logic for meaningful insights**
 - 💻 Coded in **R** using **SQLite database** with custom schema
 
+## 🧾 Report
+Documentation: full report on process + findings [`docs/`](doc)
+
 **Author:** [Markus Radu] 
 📧 markusradu2002@gmail.com
